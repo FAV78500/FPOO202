@@ -1,4 +1,4 @@
-//zona de importacion
+﻿//zona de importacion//
 import java.util.Scanner;
 //Clase principal
 public class Main {
@@ -9,19 +9,19 @@ public class Main {
         Comentario
         comentario*/
 
-        //2. Cadenas
+        /*2. Cadenas
         String cadena= "fernando " + " avila " + " valencia ";
         System.out.println(cadena);
-        System.out.println(cadena.length());
+        System.out.println(cadena.length());*/
 
-        //Extraccion de caracteres en base a parametros
+        /*Extraccion de caracteres en base a parametros
 
        System.out.println(cadena.substring(2,5));
         System.out.println(cadena.substring(2));
-        System.out.println(cadena.substring(0,5));
+        System.out.println(cadena.substring(0,5));*/
 
 
-        //3. variables
+        /*3. variables
         String cadena = "333", cadena2;
         int entero = 3,entero2,entero3;
         double decimal=3.3, decimal2,decimal3;
@@ -40,7 +40,7 @@ public class Main {
 
         //convertir int a double
         decimal2=Double.valueOf(entero);
-        System.out.println(decimal2);
+        System.out.println(decimal2);*/
 
         //4. solicitud de datos
         Scanner scn= new Scanner(System.in);
