@@ -16,8 +16,8 @@ System.out.println("----------------------------------------------------");
         Linda058.escudo=0;
         Linda058.armaPrincipal="Rifle francotirador nornfang";
         Linda058.MostrarInfo();
-        jefeMaestro.atacar("Elite");
-        jefeMaestro.recargarArma(5);
-        jefeMaestro.correr(false);
+        Linda058.atacar("Elite");
+        Linda058.recargarArma(5);
+        Linda058.correr(false);
     }
 }
