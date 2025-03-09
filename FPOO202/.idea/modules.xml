@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/FPOO202.iml" filepath="$PROJECT_DIR$/.idea/FPOO202.iml" />
+      <module fileurl="file://$PROJECT_DIR$/HORAS/HORAS.iml" filepath="$PROJECT_DIR$/HORAS/HORAS.iml" />
+      <module fileurl="file://$PROJECT_DIR$/INTX/INTX.iml" filepath="$PROJECT_DIR$/INTX/INTX.iml" />
+      <module fileurl="file://$PROJECT_DIR$/NOMBRE/NOMBRE.iml" filepath="$PROJECT_DIR$/NOMBRE/NOMBRE.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ejercicio 6/ejercicio 6.iml" filepath="$PROJECT_DIR$/ejercicio 6/ejercicio 6.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ejercicio4/ejercicio4.iml" filepath="$PROJECT_DIR$/ejercicio4/ejercicio4.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ejercicio5/ejercicio5.iml" filepath="$PROJECT_DIR$/ejercicio5/ejercicio5.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sintaxis/sintaxis.iml" filepath="$PROJECT_DIR$/sintaxis/sintaxis.iml" />
+    </modules>
+  </component>
+</project>
