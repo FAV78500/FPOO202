@@ -10,9 +10,7 @@ public class Spartan {
         this.nombre = nombre;
         this.escudo = escudo;
     }
-
-
-
+    
     public void MostrarInfo() {
         System.out.println("Informacion del Spartan");
         System.out.println("Nombre del Spartan: " + nombre);

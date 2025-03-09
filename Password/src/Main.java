@@ -12,13 +12,14 @@ public class Main {
     private static final String ESPECIALES = "!@#$%^&*()-_=+[]{}|;:,.<>?";
 
     private static final SecureRandom random = new SecureRandom();
+
     public Main(int longitud, boolean mayus, boolean especialChar) {
-        this.longitud = (longitud < 8) ? 8 : longitud;
-        this.mayus = mayus;
-        this.especialChar = especialChar;
-        this.passw = PasswGenerador();
+       setLongitud(longitud);
+       this.mayus = mayus;
+       this.especialChar = especialChar;
+       this.passw=PasswGenerador();
     }
-    public String PasswGenerador() {
+    private String PasswGenerador() {
         String caracteres = MINUSCULAS + NUMEROS;
         if (mayus) caracteres += MAYUSCULAS;
         if (especialChar) caracteres += ESPECIALES;
@@ -32,7 +33,7 @@ public class Main {
     public String getContraseña() {
         return passw;
     }
-    public String comprobarFortaleza() {
+    public String comprobacion() {
         int puntaje = 0;
         if (longitud >= 12) puntaje++;
         if (mayus) puntaje++;
@@ -46,19 +47,51 @@ public class Main {
         }
     }
     public static void main(String[] args) {
-        try {
-            String inputLongitud = JOptionPane.showInputDialog("Ingrese la longitud de la contraseña:");
-            int longitud = Integer.parseInt(inputLongitud);
-            int mayusOption = JOptionPane.showConfirmDialog(null, "¿Desea incluir mayúsculas?", "Opciones", JOptionPane.YES_NO_OPTION);
-            boolean incluirMayus = (mayusOption == JOptionPane.YES_OPTION);
-            int especialOption = JOptionPane.showConfirmDialog(null, "¿Desea incluir caracteres especiales?", "Opciones", JOptionPane.YES_NO_OPTION);
-            boolean incluirEspeciales = (especialOption == JOptionPane.YES_OPTION);
-            Main generador = new Main(longitud, incluirMayus, incluirEspeciales);
-            String password = generador.getContraseña();
-            String fortaleza = generador.comprobarFortaleza();
-            JOptionPane.showMessageDialog(null, "Contraseña: " + password +" Su contraseña es: "+ fortaleza, "Resultado", JOptionPane.INFORMATION_MESSAGE);
-        } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(null, "Error: Ingrese un número valido para la longitud.", "Error", JOptionPane.ERROR_MESSAGE);
-        }
+      try{
+          String inputLongitud =JOptionPane.showInputDialog("Ingrese longitud de contraseña");
+          int longitud = Integer.parseInt(inputLongitud);
+int mayusOption=JOptionPane.showConfirmDialog(null,"¿Desea incluir mayusculas?");
+boolean includeMayus=(mayusOption==JOptionPane.YES_OPTION);
+int especialOption=JOptionPane.showConfirmDialog(null,"¿Desea incluir caracteres especiales?");
+boolean includeEspecial=(especialOption==JOptionPane.YES_OPTION);
+
+Main generator =new Main(longitud,includeMayus,includeEspecial);
+String password =generator.getContraseña();
+String fort =generator.comprobacion();
+JOptionPane.showMessageDialog(null,"Contraseña: "+password+"\nSu contraseña es: "+fort,"Resultado",JOptionPane.INFORMATION_MESSAGE);
+      }catch(NumberFormatException e){
+          JOptionPane.showMessageDialog(null,e.getMessage(),"Error",JOptionPane.ERROR_MESSAGE);
+      }
+    }
+    public boolean isMayus() {
+        return mayus;
+    }
+
+    public void setMayus(boolean mayus) {
+        this.mayus = mayus;
+    }
+
+    public String getPassw() {
+        return passw;
+    }
+
+    public void setPassw(String passw) {
+        this.passw = passw;
+    }
+
+    public boolean isEspecialChar() {
+        return especialChar;
+    }
+
+    public void setEspecialChar(boolean especialChar) {
+        this.especialChar = especialChar;
+    }
+
+    public int getLongitud() {
+        return longitud;
+    }
+
+    public void setLongitud(int longitud) {
+        this.longitud = longitud;
     }
 }

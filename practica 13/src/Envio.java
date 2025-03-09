@@ -1,5 +1,5 @@
 import javax.swing.JOptionPane;
-public class Envio {
+public class    Envio {
     private String codigoEnvio;
     private String destino;
     private double peso;
