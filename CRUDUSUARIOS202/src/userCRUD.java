@@ -10,8 +10,10 @@
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.sql.ResultSet;
 public class userCRUD {
     private Connection conexion;
+    
     public userCRUD(){
     conexion= ConexionMySQL.conectar();
     }
@@ -28,5 +30,17 @@ public class userCRUD {
     System.out.println("Error al intentar Insertar"+e.getMessage());
     return false;
     }
+    }
+    public ResultSet obtenerUsuarioPorID(int id){
+    String selectSQL = "select * from Usuarios where id=?";
+        try{
+        PreparedStatement ps=conexion.prepareStatement(selectSQL);
+        ps.setInt(1,id);
+        return ps.executeQuery();
+        }
+        catch(SQLException e){
+        System.out.println("Error al intentar consultar"+e.getMessage());
+        return null;
+        }
     }
 }
