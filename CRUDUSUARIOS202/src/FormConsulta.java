@@ -40,7 +40,7 @@ crud = new userCRUD();
         btnBuscar = new javax.swing.JButton();
         btnTodos = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -125,6 +125,18 @@ crud = new userCRUD();
 
     private void btnTodosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTodosActionPerformed
         // TODO add your handling code here:
+        ResultSet todos = crud.obtenerTodos();
+        DefaultTableModel modelo = (DefaultTableModel) jTable1.getModel();
+modelo.setRowCount(0);
+try{
+    while(todos.next()){
+    modelo.addRow(new Object[]{todos.getInt("id"),todos.getString("nombre"),todos.getString("correo"),todos.getString("contraseña")});
+    }
+    }
+catch(SQLException e){
+    System.out.println("Error al llenar la tabla"+e.getMessage());
+}
+
     }//GEN-LAST:event_btnTodosActionPerformed
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed

@@ -43,4 +43,15 @@ public class userCRUD {
         return null;
         }
     }
+    public ResultSet obtenerTodos(){
+    String sqlTodos="select * from usuarios";
+    try{
+       PreparedStatement ps=conexion.prepareStatement(sqlTodos);
+        return ps.executeQuery();
+    }
+    catch(SQLException w){
+        System.out.println("Error al consultar"+w.getMessage());
+        return null;
+    }
+    }
 }
