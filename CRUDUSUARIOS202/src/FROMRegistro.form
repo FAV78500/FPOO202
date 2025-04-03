@@ -7,6 +7,21 @@
         <Property name="text" type="java.lang.String" value="jLabel1"/>
       </Properties>
     </Component>
+    <Container class="javax.swing.JPanel" name="jPanel1">
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <EmptySpace min="0" pref="100" max="32767" attributes="0"/>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <EmptySpace min="0" pref="100" max="32767" attributes="0"/>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+    </Container>
   </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="2"/>
@@ -60,8 +75,8 @@
                               </Group>
                               <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="txtcontraseña" max="32767" attributes="0"/>
                                   <Component id="txtcorreo" max="32767" attributes="0"/>
+                                  <Component id="txtcontrasena" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -83,15 +98,15 @@
               </Group>
               <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="txtcontraseña" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtcorreo" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtcorreo" alignment="3" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtcontrasena" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="Guardar" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="Limpiar" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -123,10 +138,8 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtnombre">
-    </Component>
-    <Component class="javax.swing.JTextField" name="txtcontrase&#xf1;a">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtcontrase&#xf1;aActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtnombreActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="txtcorreo">
@@ -148,6 +161,11 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="LimpiarActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtcontrasena">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtcontrasenaActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

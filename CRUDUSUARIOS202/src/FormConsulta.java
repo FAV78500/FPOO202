@@ -50,7 +50,7 @@ crud = new userCRUD();
                 {null, null, null, null}
             },
             new String [] {
-                "ID", "Nombre", "Correo", "Contraseña"
+                "ID", "Nombre", "Correo", "Contrasena"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
@@ -130,7 +130,7 @@ crud = new userCRUD();
 modelo.setRowCount(0);
 try{
     while(todos.next()){
-    modelo.addRow(new Object[]{todos.getInt("id"),todos.getString("nombre"),todos.getString("correo"),todos.getString("contraseña")});
+    modelo.addRow(new Object[]{todos.getInt("id"),todos.getString("nombre"),todos.getString("correo"),todos.getString("contrasena")});
     }
     }
 catch(SQLException e){
@@ -152,7 +152,7 @@ ResultSet consulta= crud.obtenerUsuarioPorID(id);
 DefaultTableModel modelo = (DefaultTableModel) jTable1.getModel();
 modelo.setRowCount(0);
 if(consulta.next()){
-modelo.addRow(new Object[]{consulta.getInt("id"),consulta.getString("nombre"),consulta.getString("correo"),consulta.getString("contraseña")});
+modelo.addRow(new Object[]{consulta.getInt("id"),consulta.getString("nombre"),consulta.getString("correo"),consulta.getString("contrasena")});
 }
 }
 catch(SQLException e){

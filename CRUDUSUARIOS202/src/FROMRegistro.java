@@ -40,17 +40,29 @@ if (conexion != null){
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         txtnombre = new javax.swing.JTextField();
-        txtcontraseña = new javax.swing.JTextField();
         txtcorreo = new javax.swing.JTextField();
         Guardar = new javax.swing.JButton();
         Limpiar = new javax.swing.JButton();
+        txtcontrasena = new javax.swing.JTextField();
 
         jLabel1.setText("jLabel1");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -62,9 +74,9 @@ if (conexion != null){
 
         jLabel5.setText("Correo");
 
-        txtcontraseña.addActionListener(new java.awt.event.ActionListener() {
+        txtnombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtcontraseñaActionPerformed(evt);
+                txtnombreActionPerformed(evt);
             }
         });
 
@@ -85,6 +97,12 @@ if (conexion != null){
         Limpiar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 LimpiarActionPerformed(evt);
+            }
+        });
+
+        txtcontrasena.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtcontrasenaActionPerformed(evt);
             }
         });
 
@@ -117,8 +135,8 @@ if (conexion != null){
                                     .addComponent(jLabel4))
                                 .addGap(66, 66, 66)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtcontraseña)
-                                    .addComponent(txtcorreo))))))
+                                    .addComponent(txtcorreo)
+                                    .addComponent(txtcontrasena))))))
                 .addGap(42, 42, 42))
         );
         layout.setVerticalGroup(
@@ -132,13 +150,13 @@ if (conexion != null){
                     .addComponent(txtnombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(53, 53, 53)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtcontraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtcorreo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5))
-                .addGap(49, 49, 49)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGap(52, 52, 52)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel4)
-                    .addComponent(txtcorreo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(58, 58, 58)
+                    .addComponent(txtcontrasena, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(55, 55, 55)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Guardar)
                     .addComponent(Limpiar))
@@ -152,15 +170,15 @@ if (conexion != null){
     //obtener valores de los txt//
     String nombre =txtnombre.getText();
     String correo =txtcorreo.getText();
-    String contraseña =txtcontraseña.getText();
+    String contrasena =txtcontrasena.getText();
     //no enviar voids//
-    if (nombre.isEmpty() || correo.isEmpty()|| contraseña.isEmpty()){
+    if (nombre.isEmpty() || correo.isEmpty()|| contrasena.isEmpty()){
     JOptionPane.showMessageDialog(this,"Todos los campos son obligatorios");
     return;
     }
     //Ejecutamos el insert//
     userCRUD crud =new userCRUD();
-    boolean status= crud.crearusuario(nombre,correo,contraseña);
+    boolean status= crud.crearusuario(nombre,correo,contrasena);
     //Notificar al usuario//
     if(status){
     JOptionPane.showMessageDialog(this, "Usuario guardado exitosamente", "Exito", JOptionPane.INFORMATION_MESSAGE);
@@ -174,7 +192,7 @@ if (conexion != null){
     private void LimpiarCampos(){
    txtnombre.setText("");
    txtcorreo.setText("");
-   txtcontraseña.setText("");
+   txtcontrasena.setText("");
     }
     
     private void LimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LimpiarActionPerformed
@@ -186,9 +204,13 @@ if (conexion != null){
         // TODO add your handling code here:
     }//GEN-LAST:event_txtcorreoActionPerformed
 
-    private void txtcontraseñaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtcontraseñaActionPerformed
+    private void txtcontrasenaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtcontrasenaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtcontraseñaActionPerformed
+    }//GEN-LAST:event_txtcontrasenaActionPerformed
+
+    private void txtnombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtnombreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtnombreActionPerformed
 
     /**
      * @param args the command line arguments
@@ -233,7 +255,8 @@ if (conexion != null){
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JTextField txtcontraseña;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField txtcontrasena;
     private javax.swing.JTextField txtcorreo;
     private javax.swing.JTextField txtnombre;
     // End of variables declaration//GEN-END:variables
